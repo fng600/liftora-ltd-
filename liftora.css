@@ -1,0 +1,361 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #e0f0ff; /* light blue background */
+}
+
+/* Header */
+header {
+  text-align: center; /* center the text */
+  background-color: #f5f5f5; /* lighter background for header */
+  padding: 3rem 2rem 1rem 2rem;
+  position: relative;
+}
+
+header h1 {
+  font-size: 4rem; /* make it big */
+  color: #0077b6; /* different color for logo */
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Underline design below LiftOra text */
+header h1::after {
+  content: '';
+  display: block;
+  width: 150px;
+  height: 5px;
+  background-color: #00b4d8;
+  margin: 1rem auto 0 auto; /* center it below the text */
+  border-radius: 2px;
+}
+
+/* Navigation below the logo */
+header nav {
+  margin-top: 2rem;
+}
+
+header nav a {
+  color: #0077b6;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  color: #00b4d8;
+}
+
+/* Sections */
+section {
+  padding: 3rem 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Section titles */
+section h2 {
+  text-align: center;
+  color: #0077b6;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #0077b6;
+  color: #fff;
+  font-weight: bold;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  /* Gradient background for sky effect */
+  background: linear-gradient(to bottom, #87ceeb, #e0f7fa);
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.ibb.co/yhSx4B7/clouds.png') repeat-x; /* example cloud image */
+  opacity: 0.2; /* subtle */
+  z-index: -1; /* behind everything */
+  animation: moveClouds 60s linear infinite;
+}
+
+/* Animate clouds slowly */
+@keyframes moveClouds {
+  from { background-position-x: 0; }
+  to { background-position-x: 1000px; }
+}
+
+  body::after {
+  content: '';
+  position: fixed;
+  top: 20%;
+  left: -150px;
+  width: 150px;
+  height: 75px;
+  background: url('images/airplane.png.webp') no-repeat;
+  background-size: contain;
+  opacity: 0.1; /* blends with sky */
+  z-index: -1;
+  animation: flyPlane 30s linear infinite;
+}
+
+@keyframes flyPlane {
+  from { left: -150px; }
+  to { left: 110%; }
+}
+
+/* LiftOra Logo */
+header h1 {
+  font-size: 4rem;
+  color: #0077b6;
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative; /* for positioning the underline */
+}
+
+/* Underline below the logo but after RC number */
+header h1::after {
+  content: '';
+  display: block;
+  width: 150px;
+  height: 5px;
+  background-color: #00b4d8;
+  margin: 1.5rem auto 0 auto; /* space between RC number and line */
+  border-radius: 2px;
+}
+
+/* RC Number above the underline */
+header .rc-number {
+  font-size: 1.2rem;
+  color: #0096c7;
+  text-align: center;
+  margin: 0.5rem 0 0 0; /* margin below logo but above underline */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Initial hidden state */
+section {
+  opacity: 0;
+  transform: translateY(50px); /* start slightly down */
+  transition: all 0.8s ease-out;
+}
+
+/* When visible */
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Team Section */
+#team {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Titles */
+#team h2 {
+  text-align: center;
+  color: #0077b6;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Team Cards */
+.team-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.team-card h3 {
+  color: #0077b6;
+  margin-bottom: 0.5rem;
+}
+
+.team-card p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Layout for Founders - stacked */
+.founders {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Layout for Executives - side by side */
+.executives {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Each executive card width */
+.executives .team-card {
+  flex: 1 1 250px; /* min width 250px, grow to fit */
+  max-width: 300px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .executives {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+#projects {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f0f8ff; /* subtle light blue background */
+  border-radius: 15px;
+}
+
+#projects h2 {
+  text-align: center;
+  color: #0077b6;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  flex: 1 1 300px;
+  max-width: 350px;
+  text-align: left;
+  opacity: 0;             /* start hidden */
+  transform: translateY(50px); /* start below */
+  transition: all 0.8s ease;
+}
+
+.project-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  color: #0077b6;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Vision Section */
+#vision {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #e6f2ff; /* light blue background */
+  border-radius: 15px;
+}
+
+#vision h2 {
+  text-align: center;
+  color: #0077b6;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.vision-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Circle cards */
+.vision-card {
+  background: #fff;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%; /* makes it circular */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  opacity: 0;             /* for animation */
+  transform: translateY(50px); /* start below */
+}
+
+.vision-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vision-card:hover {
+  transform: translateY(-5px);
+}
+
+.vision-card h3 {
+  color: #0077b6;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.vision-card p {
+  color: #333;
+  font-size: 0.9rem;
+}
